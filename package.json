@@ -1,0 +1,25 @@
+{
+  "name": "monsters-graphql-server",
+  "version": "0.0.1",
+  "description": "GraphQL server for Monsters game",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/jarekb123/monsters-graphql-server.git"
+  },
+  "keywords": [
+    "monsters",
+    "graphql",
+    "nodejs",
+    "flutter"
+  ],
+  "author": "Jaroslaw Butajlo <jaroslaw.butajlo@gmail.com>",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/jarekb123/monsters-graphql-server/issues"
+  },
+  "homepage": "https://github.com/jarekb123/monsters-graphql-server#readme"
+}
