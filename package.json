@@ -1,25 +1,29 @@
 {
-  "name": "monsters-graphql-server",
+  "name": "monsters-game-backend",
   "version": "0.0.1",
-  "description": "GraphQL server for Monsters game",
-  "main": "src/index.js",
+  "description": "GraphQL Backend for Monster game",
+  "main": "index.js",
   "scripts": {
+    "start": "node dist/server",
+    "startDev": "ts-node src/server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+ssh://git@github.com/jarekb123/monsters-graphql-server.git"
-  },
   "keywords": [
-    "monsters",
     "graphql",
     "nodejs",
-    "flutter"
+    "api",
+    "typescript",
+    "javascript"
   ],
   "author": "Jaroslaw Butajlo <jaroslaw.butajlo@gmail.com>",
   "license": "Apache-2.0",
-  "bugs": {
-    "url": "https://github.com/jarekb123/monsters-graphql-server/issues"
+  "devDependencies": {
+    "ts-node": "^8.1.0",
+    "type-graphql": "^0.17.3",
+    "typescript": "^3.4.5"
   },
-  "homepage": "https://github.com/jarekb123/monsters-graphql-server#readme"
+  "dependencies": {
+    "apollo-server": "^2.5.0",
+    "graphql": "^14.3.0"
+  }
 }
