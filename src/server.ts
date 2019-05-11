@@ -1,16 +1,20 @@
-import { ApolloServer, gql } from 'apollo-server'
-import { buildSchema } from 'type-graphql';
+import { ApolloServer } from 'apollo-server';
 
-import {UserResolver} from './user/user-resolvers'
+import { createSchema } from './utils/graphql-utils';
+import { MikroORM } from 'mikro-orm';
+import { User } from './user/user.types';
 
-const resolvers = buildSchema({
-    resolvers: [UserResolver]
-})
+async function bootstrap() {
+	const orm = MikroORM.init({
+		dbName: 'monsters-dev',
+		clientUrl: 'mongodb://localhost:27017',
+		entities: [User],
+	})
+	const server = new ApolloServer({
+		schema: await createSchema()
+	});
+	const { url } = await server.listen(5000);
+	console.log(`Server is running at ${url}`);
+}
 
-const server = new ApolloServer({
-    resolvers
-})
-
-server.listen(3000).then(({ url }) => {
-    console.log(`Server ready at ${url}`)
-})
+bootstrap();
